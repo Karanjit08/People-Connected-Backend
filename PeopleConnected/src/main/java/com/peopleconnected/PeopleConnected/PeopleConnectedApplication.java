@@ -8,7 +8,7 @@ public class PeopleConnectedApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PeopleConnectedApplication.class, args);
-		System.out.println("Running...");
+		System.out.println("Server Running...");
 	}
 
 }
