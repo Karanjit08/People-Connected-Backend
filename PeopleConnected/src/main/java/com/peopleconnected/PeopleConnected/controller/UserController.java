@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("user")
 public class UserController {
@@ -23,6 +25,16 @@ public class UserController {
     @PutMapping("/update/{id}")
     public ResponseEntity<UserProfile> updateProfile(@PathVariable int id, @RequestBody UserProfile userProfile) {
         return this.userService.updateProfile(id, userProfile);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<UserProfile>> getAllUsers() {
+        return this.userService.getAllUsers();
+    }
+
+    @GetMapping("/{name}")
+    public ResponseEntity<List<UserProfile>> getUsersByName(@PathVariable String name) {
+        return this.userService.getUsersByName(name);
     }
 
 }
