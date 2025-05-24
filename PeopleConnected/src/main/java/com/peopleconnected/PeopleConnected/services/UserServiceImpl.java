@@ -62,4 +62,24 @@ public class UserServiceImpl implements UserService{
         }
         return new ResponseEntity<>(new ArrayList<>(), HttpStatus.OK);
     }
+
+    @Override
+    public ResponseEntity<List<UserProfile>> getUsersByExpertise(String expertise) {
+        try {
+            return new ResponseEntity<>(userDao.findByExpertiseContainingIgnoreCase(expertise),HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new ResponseEntity<>(new ArrayList<>(),HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<List<UserProfile>> getUsersByBio(String bio) {
+        try {
+            return new ResponseEntity<>(userDao.findByBioContainingIgnoreCase(bio),HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new ResponseEntity<>(new ArrayList<>(),HttpStatus.OK);
+    }
 }

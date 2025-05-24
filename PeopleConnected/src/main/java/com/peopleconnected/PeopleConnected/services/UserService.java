@@ -13,4 +13,8 @@ public interface UserService {
     ResponseEntity<List<UserProfile>> getAllUsers();
 
     ResponseEntity<List<UserProfile>> getUsersByName(String name);
+
+    ResponseEntity<List<UserProfile>> getUsersByExpertise(String expertise);
+
+    ResponseEntity<List<UserProfile>> getUsersByBio(String bio);
 }
