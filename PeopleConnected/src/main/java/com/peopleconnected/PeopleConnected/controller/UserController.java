@@ -37,4 +37,14 @@ public class UserController {
         return this.userService.getUsersByName(name);
     }
 
+    @GetMapping("/expertise/{expertise}")
+    public ResponseEntity<List<UserProfile>> getUsersByExpertise(@PathVariable String expertise) {
+        return this.userService.getUsersByExpertise(expertise);
+    }
+
+    @GetMapping("/bio/{bio}")
+    public ResponseEntity<List<UserProfile>> getUsersByBio(@PathVariable String bio) {
+        return this.userService.getUsersByBio(bio);
+    }
+
 }

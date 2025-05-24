@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface UserDao extends JpaRepository<UserProfile,Integer> {
     List<UserProfile> findByNameContainingIgnoreCase(String name);
+    List<UserProfile> findByExpertiseContainingIgnoreCase(String expertise);
+    List<UserProfile> findByBioContainingIgnoreCase(String bio);
 }
